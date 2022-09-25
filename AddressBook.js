@@ -148,6 +148,13 @@ function editContact(firstName, choice, newValue) {
     }
 }
 
+function addContact(contact){
+if(!contactExist(contact.firstName))
+addressBookArray.push(contact);
+else
+throw "contact already exist!"
+}
+
 function deleteContact(firstName){
 if(contactExist(firstName)){
     addressBookArray = addressBookArray.filter((contact) => contact.firstName != firstName);
@@ -186,5 +193,13 @@ console.log("\n*** Contact After Deleting ***")
 deleteContact("Rohit");
 console.log(addressBookArray);
 
-console.log("\n*** Count Of Contact")
+console.log("\n*** Count Of Contact ***")
 console.log("count of contact : "+addressBookArray.reduce(countContact,0))
+
+console.log("\n*** add duplicate contact ***")
+try{
+    addContact(new Contact("Amol", "Mane","abcd","pune", "maharshtra","654 512","91 8454545547", "amolmane@gmail.com"));
+}catch(e){
+    console.log(e);
+}
+console.log(addressBookArray);
