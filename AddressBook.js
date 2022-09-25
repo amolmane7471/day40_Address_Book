@@ -178,6 +178,13 @@ function searchByState(state,firstName){
     return addressBookArray.filter((contact) => contact.state == state && contact.firstName == firstName);
 }
 
+function viewByCity(city){
+return addressBookArray.filter((contact) => contact.city == city);
+}
+function viewByState(state){
+    return addressBookArray.filter((contact) => contact.state == state);
+    }
+    
 let addressBookArray = new Array();
 try{
 addressBookArray.push(new Contact("Amol", "Mane","abcd","pune", "maharshtra","654 512","91 8454545547", "amolmane@gmail.com"));
@@ -216,3 +223,9 @@ console.log(searchByCity("pune","Amol"));
 
 console.log("\n*** search by state ***")
 console.log(searchByState("Goa","Amol"));
+
+console.log("\n*** View By city ***");
+console.log(viewByCity("pune"));
+
+console.log("\n*** View By state ***");
+console.log(viewByCity("MP"));
