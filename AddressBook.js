@@ -170,6 +170,14 @@ count = count +1;
 return count;
 }
 
+function searchByCity(city){
+    return addressBookArray.filter((contact) => contact.city == city);
+}
+
+function searchByState(state){
+    return addressBookArray.filter((contact) => contact.state == state);
+}
+
 let addressBookArray = new Array();
 try{
 addressBookArray.push(new Contact("Amol", "Mane","abcd","pune", "maharshtra","654 512","91 8454545547", "amolmane@gmail.com"));
@@ -203,3 +211,8 @@ try{
     console.log(e);
 }
 console.log(addressBookArray);
+console.log("\n*** search by city ***")
+console.log(searchByCity("pune"));
+
+console.log("\n*** search by state ***")
+console.log(searchByState("Goa"));
