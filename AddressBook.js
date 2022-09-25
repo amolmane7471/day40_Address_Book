@@ -156,7 +156,11 @@ else
 {
     console.log("Contact Not Exist");
 }
+}
 
+function countContact(count){
+count = count +1;
+return count;
 }
 
 let addressBookArray = new Array();
@@ -173,9 +177,14 @@ catch(e){
     console.log(e)
  }
 console.log(addressBookArray);
+
 console.log("\n*** After Editing Contact ***")
 editContact("Rohit", "lastName", "Kumar");
 console.log(addressBookArray);
+
 console.log("\n*** Contact After Deleting ***")
 deleteContact("Rohit");
 console.log(addressBookArray);
+
+console.log("\n*** Count Of Contact")
+console.log("count of contact : "+addressBookArray.reduce(countContact,0))
