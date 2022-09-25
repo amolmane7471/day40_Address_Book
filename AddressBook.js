@@ -111,6 +111,10 @@ class Contact{
         return "First_Name : "+ this.firstName + ", Last_Name : "+ this.lastName +", Address : "+this.address +", City : "+ this.city + ", State : "+ this.state +", Zip : "+ this.zip+ ", Phone_Number : "+ this.phoneNumber + ", Email : "+ this.email;
     }
 }
-
-let contact = new Contact("Amol", "Mane","abcd","pune", "maharshtra",654512, 918454545547, "amolmane@gmail.com");
+try{
+let contact = new Contact("amol", "Mane","abcd","pune", "maharshtra",654512, 918454545547, "amolmane@gmail.com");
 console.log(contact.toString());
+}
+catch(e){
+    console.log(e)
+}
