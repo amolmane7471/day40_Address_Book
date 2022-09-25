@@ -111,10 +111,17 @@ class Contact{
         return "First_Name : "+ this.firstName + ", Last_Name : "+ this.lastName +", Address : "+this.address +", City : "+ this.city + ", State : "+ this.state +", Zip : "+ this.zip+ ", Phone_Number : "+ this.phoneNumber + ", Email : "+ this.email;
     }
 }
+let addressBookArray = new Array();
 try{
-let contact = new Contact("amol", "Mane","abcd","pune", "maharshtra",654512, 918454545547, "amolmane@gmail.com");
-console.log(contact.toString());
+addressBookArray.push(new Contact("Amol", "Mane","abcd","pune", "maharshtra",654512, 918454545547, "amolmane@gmail.com"));
 }
 catch(e){
     console.log(e)
 }
+try{
+ addressBookArray.push(new Contact("Rohit", "Sharma","jklm","Mumbai", "maharshtra",215454, 917844445244, "rohit123@gmail.com"));
+ }
+catch(e){
+    console.log(e)
+ }
+console.log(addressBookArray);
