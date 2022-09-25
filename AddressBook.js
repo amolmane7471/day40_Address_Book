@@ -170,12 +170,12 @@ count = count +1;
 return count;
 }
 
-function searchByCity(city){
-    return addressBookArray.filter((contact) => contact.city == city);
+function searchByCity(city,firstName){
+    return addressBookArray.filter((contact) => contact.city == city && contact.firstName == firstName);
 }
 
-function searchByState(state){
-    return addressBookArray.filter((contact) => contact.state == state);
+function searchByState(state,firstName){
+    return addressBookArray.filter((contact) => contact.state == state && contact.firstName == firstName);
 }
 
 let addressBookArray = new Array();
@@ -212,7 +212,7 @@ try{
 }
 console.log(addressBookArray);
 console.log("\n*** search by city ***")
-console.log(searchByCity("pune"));
+console.log(searchByCity("pune","Amol"));
 
 console.log("\n*** search by state ***")
-console.log(searchByState("Goa"));
+console.log(searchByState("Goa","Amol"));
