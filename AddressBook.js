@@ -191,9 +191,17 @@ function getCountOfContactsByCity(city){
 function getCountOfContactsByState(state){
     return addressBookArray.filter((contact) => contact.state == state).length;
     }
-    
+
+function sortAddressBookByName(){
+   addressBookArray.sort((firstPerson, secondPerson) => (firstPerson.firstName).localeCompare(secondPerson.firstName)); 
+   console.log(addressBookArray);  //localeCompare method compare two strings in the current lacale
+}    
+
 
 let addressBookArray = new Array();
+let contactsCityMap = new Map();
+let contactsStateMap = new Map();
+
 try{
 addressBookArray.push(new Contact("Amol", "Mane","abcd","pune", "maharashtra","654 512","91 8454545547", "amolmane@gmail.com"));
 }
@@ -253,3 +261,6 @@ console.log(viewByCity("MP"));
 
 console.log("\nNumber of Contacts in City : pune = " + getCountOfContactsByCity("pune"));
 console.log("\nNumber of Contacts in State : maharashtra = " + getCountOfContactsByState("maharashtra"));
+
+console.log("\nContacts In Alphabetical Order");
+sortAddressBookByName();
