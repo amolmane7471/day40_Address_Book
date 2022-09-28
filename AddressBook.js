@@ -197,6 +197,20 @@ function sortAddressBookByName(){
    console.log(addressBookArray);  //localeCompare method compare two strings in the current lacale
 }    
 
+function sortAddressBookByCity(){
+    addressBookArray.sort((firstPerson, secondPerson) => (firstPerson.city).localeCompare(secondPerson.city));
+    console.log(addressBookArray);
+}
+
+function sortAddressBookByState(){
+    addressBookArray.sort((firstPerson, secondPerson) => (firstPerson.state).localeCompare(secondPerson.state));
+    console.log(addressBookArray);
+}
+
+function sortAddressBookByZip(){
+    addressBookArray.sort((firstPerson, secondPerson) => (firstPerson.zip).localeCompare(secondPerson.zip));
+    console.log(addressBookArray);
+}
 
 let addressBookArray = new Array();
 let contactsCityMap = new Map();
@@ -264,3 +278,12 @@ console.log("\nNumber of Contacts in State : maharashtra = " + getCountOfContact
 
 console.log("\nContacts In Alphabetical Order");
 sortAddressBookByName();
+
+console.log("\nContacts Sorted Using City");
+sortAddressBookByCity();
+
+console.log("\nContacts Sorted Using State");
+sortAddressBookByState();
+
+console.log("\nContacts Sorted Using Zip");
+sortAddressBookByZip();
