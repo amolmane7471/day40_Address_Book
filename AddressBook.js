@@ -184,16 +184,37 @@ return addressBookArray.filter((contact) => contact.city == city);
 function viewByState(state){
     return addressBookArray.filter((contact) => contact.state == state);
     }
+function getCountOfContactsByCity(city){
+    return addressBookArray.filter((contact) => contact.city == city).length;
+    }
     
+function getCountOfContactsByState(state){
+    return addressBookArray.filter((contact) => contact.state == state).length;
+    }
+    
+
 let addressBookArray = new Array();
 try{
-addressBookArray.push(new Contact("Amol", "Mane","abcd","pune", "maharshtra","654 512","91 8454545547", "amolmane@gmail.com"));
+addressBookArray.push(new Contact("Amol", "Mane","abcd","pune", "maharashtra","654 512","91 8454545547", "amolmane@gmail.com"));
 }
 catch(e){
     console.log(e)
 }
 try{
- addressBookArray.push(new Contact("Rohit", "Sharma","jklm","Mumbai", "maharshtra","215 454", "91 7844445244", "rohit123@gmail.com"));
+    addressBookArray.push(new Contact("Mahesh", "Kale","wxyz","pune", "maharashtra","254 412","91 7454545547", "kale11@gmail.com"));
+    }
+    catch(e){
+        console.log(e)
+    }
+try{
+addressBookArray.push(new Contact("Dheeraj", "Kumar","pqrs","Nagpur", "maharashtra","315 454", "91 8945625244", "dheeraj@gmail.com"));
+}
+catch(e){
+    console.log(e)
+}
+           
+try{
+ addressBookArray.push(new Contact("Rohit", "Sharma","jklm","Mumbai", "maharashtra","215 454", "91 7844445244", "rohit123@gmail.com"));
  }
 catch(e){
     console.log(e)
@@ -213,7 +234,7 @@ console.log("count of contact : "+addressBookArray.reduce(countContact,0))
 
 console.log("\n*** add duplicate contact ***")
 try{
-    addContact(new Contact("Amol", "Mane","abcd","pune", "maharshtra","654 512","91 8454545547", "amolmane@gmail.com"));
+    addContact(new Contact("Amol", "Mane","abcd","pune", "maharashtra","654 512","91 8454545547", "amolmane@gmail.com"));
 }catch(e){
     console.log(e);
 }
@@ -229,3 +250,6 @@ console.log(viewByCity("pune"));
 
 console.log("\n*** View By state ***");
 console.log(viewByCity("MP"));
+
+console.log("\nNumber of Contacts in City : pune = " + getCountOfContactsByCity("pune"));
+console.log("\nNumber of Contacts in State : maharashtra = " + getCountOfContactsByState("maharashtra"));
